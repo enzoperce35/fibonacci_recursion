@@ -5,7 +5,7 @@ def fibs(num)
 end
 
 def fibs_rec(num, arr = [0, 1])
-  arr.count == num + 1 ? arr : fibs_rec(num, arr.push(arr[-2] + arr[-1]))
+  num <= 1 ? arr : fibs_rec(num - 1, arr << arr[-2] + arr[-1])
 end
 
 p fibs 6 #=> [0, 1, 1, 2, 3, 5, 8]
